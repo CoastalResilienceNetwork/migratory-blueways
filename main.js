@@ -6,7 +6,7 @@ define([
 function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, content, esriapi, clicks, variables, lang ) {
 	return declare(PluginBase, {
 		// The height and width are set here when an infographic is defined. When the user click Continue it rebuilds the app window with whatever you put in.
-		toolbarName: "Oil and Gas Activity Planning", showServiceLayersInLegend: true, allowIdentifyWhenActive: false, rendered: false, resizable: false,
+		toolbarName: "Energy Planning", fullName: "Energy Planning", showServiceLayersInLegend: true, allowIdentifyWhenActive: false, rendered: false, resizable: false,
 		hasCustomPrint: false, size:'custom', width:594, hasHelp:false, 
 		
 		// First function called when the user clicks the pluging icon. 
