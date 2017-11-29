@@ -74,7 +74,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 			this.clicks = new clicks();
 			this.variables = new variables();
 			// ADD HTML TO APP
-			$(this.container).parent().append('<button id="viewMbInfoGraphicIcon" class="button button-default ig-icon"><img src="plugins/migratory-blueways/images/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>')
+			$(this.container).parent().append('<button id="viewMbInfoGraphicIcon" class="button button-default ig-icon" title="Infographic"><img src="plugins/migratory-blueways/images/InfographicIcon_v1_23x23.png" alt="show overview graphic"></button>')
 			$(this.container).parent().find("#viewMbInfoGraphicIcon").on('click',function(c){
 				TINY.box.show({
 					animate: true,
