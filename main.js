@@ -13,6 +13,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 		initialize: function (frameworkParameters) {
 			// Access framework parameters
 			declare.safeMixin(this, frameworkParameters);
+			this.$cn = $(this.container);
 			// Define object to access global variables from JSON object. Only add variables to varObject.json that are needed by Save and Share. 
 			this.obj = dojo.eval("[" + obj + "]")[0];	
 			this.url = "http://services.coastalresilience.org:6080/arcgis/rest/services/Gulf_of_Mexico/Migratory_Blueways/MapServer";
@@ -26,7 +27,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 		},
 		// Called after hibernate at app startup. Calls the render function which builds the plugins elements and functions.   
 		activate: function (showHelpOnStart) {
-			$('.sidebar-nav .nav-title').css("margin-left", "25px");
+			this.$cn.prev('.sidebar-nav').find('.nav-title').css("margin-left", "25px");
 			if (this.rendered == false) {
 				this.rendered = true;							
 				this.render();
@@ -39,7 +40,6 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 		},
 		// Called when user hits the minimize '_' icon on the pluging. Also called before hibernate when users closes app by clicking 'X'.
 		deactivate: function () {
-			$('.sidebar-nav .nav-title').css("margin-left", "0px");
 			this.open = "no";	
 		},	
 		// Called when user hits 'Save and Share' button. This creates the url that builds the app at a given state using JSON. 
