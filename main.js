@@ -32,14 +32,29 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 				this.rendered = true;							
 				this.render();
 				$(this.printButton).hide();
+				ga('send','event',{
+					eventCategory: 'Migratory Blueways', 
+					eventAction: 'App opened', 
+					eventLabel: 'Initial open'
+				});
 			}else{
 				this.dynamicLayer.setVisibleLayers(this.obj.visibleLayers);
 				$('#' + this.id).parent().parent().css('display', 'flex');
+				ga('send','event',{
+					eventCategory: 'Migratory Blueways', 
+					eventAction: 'App opened', 
+					eventLabel: 'Additional opening'
+				});
 			}
 			this.open = "yes";
 		},
 		// Called when user hits the minimize '_' icon on the pluging. Also called before hibernate when users closes app by clicking 'X'.
 		deactivate: function () {
+			ga('send','event',{
+				eventCategory: 'Migratory Blueways', 
+				eventAction: 'App closed', 
+				eventLabel: 'closed or minimized app'
+			});
 			this.open = "no";	
 		},	
 		// Called when user hits 'Save and Share' button. This creates the url that builds the app at a given state using JSON. 
