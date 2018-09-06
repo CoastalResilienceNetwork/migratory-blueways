@@ -33,7 +33,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 				this.render();
 				$(this.printButton).hide();
 				ga('send','event',{
-					eventCategory: 'Migratory Blueways', 
+					eventCategory: 'Energy Planning', 
 					eventAction: 'App opened', 
 					eventLabel: 'Initial open'
 				});
@@ -41,7 +41,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 				this.dynamicLayer.setVisibleLayers(this.obj.visibleLayers);
 				$('#' + this.id).parent().parent().css('display', 'flex');
 				ga('send','event',{
-					eventCategory: 'Migratory Blueways', 
+					eventCategory: 'Energy Planning', 
 					eventAction: 'App opened', 
 					eventLabel: 'Additional opening'
 				});
@@ -51,7 +51,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 		// Called when user hits the minimize '_' icon on the pluging. Also called before hibernate when users closes app by clicking 'X'.
 		deactivate: function () {
 			ga('send','event',{
-				eventCategory: 'Migratory Blueways', 
+				eventCategory: 'Energy Planning', 
 				eventAction: 'App closed', 
 				eventLabel: 'closed or minimized app'
 			});
